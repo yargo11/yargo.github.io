@@ -28,6 +28,40 @@
         </ul>
       </header>
       <div class="wrapper">
+  
+  <p>11.1 - cannypoints.cpp</p>
+  	<p>Para realização dessa atividade, foi utilizada a imagem biel.png. Primeiramente, apliquei o pontilhismo sobre a imagem
+  	e obtive este resultado:</p>
+  	<br>
+  	<img src"prepontos.jpg">
+  	<br>
+  	<p>Após isso criei um laço para varias o limiar da função Canny que varia de 20 em 20, até 200. O resultado foi:</p>
+  	<img src="pontos.jpg">
+  	<div width="auto" height="auto" style="background-color:lightgray;">
+  		<pre>for(int l=10;l<200;l+=20){
+
+Canny(image,border, l,l*3);
+
+  random_shuffle(xrange.begin(), xrange.end());
+
+  for(auto i : xrange){
+    random_shuffle(yrange.begin(), yrange.end());
+    for(auto j : yrange){
+	if(border.at<uchar>(i,j)==255){
+
+	raio=rand()%4;
+      x = i+rand()%(2*JITTER)-JITTER+1;
+      y = j+rand()%(2*JITTER)-JITTER+1;
+      gray = image.at<uchar>(x,y);
+      circle(points,
+             cv::Point(y,x),
+             raio,
+             CV_RGB(gray,gray,gray),
+             -1,
+             CV_AA);
+    }}}}
+</pre>
+  	</div>
   <p>3.2 - regions.cpp</p>
 
 	<p>Para trocar a regiao definida entre os dois pontos, multipliquei cada pixel dentro da area por 255:</p>
