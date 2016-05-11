@@ -30,12 +30,9 @@
       <div class="wrapper">
   
   <p>11.1 - cannypoints.cpp</p>
-  	<p>Para realização dessa atividade, foi utilizada a imagem biel.png. Primeiramente, apliquei o pontilhismo sobre a imagem
-  	e obtive este resultado:</p>
-  	<br>
-  	<img src="prepontos.jpg">
-  	<br>
-  	<p>Após isso criei um laço para varias o limiar da função Canny que varia de 20 em 20, até 200. O resultado foi:</p>
+  	<p>Para realização dessa atividade, foi utilizada a imagem biel.png. Criei um 'for' para variar o limiar da função de Canny
+  	e dentro desse 'for', procurei por cada ponto branco (255, que representa um pixel das bordas de Canny) e apliquei a função Circle
+  	em cima para gerar a arte pontilhada.
   	<img src="pontos.jpg">
   	<div width="auto" height="auto" style="background-color:lightgray;">
   		<pre>for(int l=10;l<200;l+=20){
@@ -49,7 +46,7 @@ Canny(image,border, l,l*3);
     for(auto j : yrange){
 	if(border.at<uchar>(i,j)==255){
 
-	raio=rand()%4;
+	raio=rand()%2;
       x = i+rand()%(2*JITTER)-JITTER+1;
       y = j+rand()%(2*JITTER)-JITTER+1;
       gray = image.at<uchar>(x,y);
